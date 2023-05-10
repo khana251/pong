@@ -5,6 +5,7 @@
 
 The goal is for each player to reach eleven points before the opponent; points are earned when one fails to return the ball to the other.
 
+
 ### How to play:
 
 **Player 1:** Move up using the "w" key and down using the "s" key.
