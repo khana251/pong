@@ -1,4 +1,5 @@
 import turtle
+import time
 
 wn = turtle.Screen()
 wn.title("Pong by Amaan")
@@ -104,6 +105,17 @@ while True:
         score_a += 1
         pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+        if score_a == 11:
+            answer = wn.textinput("Player A Wins! Play again?", "Do you want to play again? (y/n)")
+            if answer == "y":
+                score_a = 0
+                score_b = 0
+                pen.clear()
+                pen.goto(0, 260)
+                pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+                wn.listen()
+            else:
+                turtle.bye()
         ball.goto(0, 0)
         ball.dx *= -1
 
@@ -111,6 +123,17 @@ while True:
         score_b += 1
         pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+        if score_b == 11:
+            answer = wn.textinput("Player B Wins! Play again?", "Do you want to play again? (y/n)")
+            if answer == "y":
+                score_a = 0
+                score_b = 0
+                pen.clear()
+                pen.goto(0, 260)
+                pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+                wn.listen()
+            else:
+                turtle.bye()
         ball.goto(0, 0)
         ball.dx *= -1
 
