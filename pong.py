@@ -1,7 +1,7 @@
 import turtle
 
 wn = turtle.Screen()
-wn.title("Pong")
+wn.title("Pong by Amaan")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
@@ -46,28 +46,32 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Player A: {}  Player B: {}".format(0,0), align="center", font=("Courier", 24, "normal"))
 
-# Functions
+# Movements
 def paddle_a_up():
-    y = paddle_a.ycor()
-    y += 20
-    paddle_a.sety(y)
+    if paddle_a.ycor() < 250:
+        y = paddle_a.ycor()
+        y += 20
+        paddle_a.sety(y)
 
 def paddle_a_down():
-    y = paddle_a.ycor()
-    y -= 20
-    paddle_a.sety(y)
+    if paddle_a.ycor() > -250:
+        y = paddle_a.ycor()
+        y -= 20
+        paddle_a.sety(y)
 
 def paddle_b_up():
-    y = paddle_b.ycor()
-    y += 20
-    paddle_b.sety(y)
+    if paddle_b.ycor() < 250:
+        y = paddle_b.ycor()
+        y += 20
+        paddle_b.sety(y)
 
 def paddle_b_down():
-    y = paddle_b.ycor()
-    y -= 20
-    paddle_b.sety(y)
+    if paddle_b.ycor() > -250:
+        y = paddle_b.ycor()
+        y -= 20
+        paddle_b.sety(y)
 
 # Keyboard bindings
 wn.listen()
